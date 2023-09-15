@@ -5,3 +5,4 @@ Gemfile.lock
 *.gem
 run.sh
 startbootstrap-clean-blog-jekyll
+*.code-workspace
