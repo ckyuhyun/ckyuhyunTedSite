@@ -17,7 +17,7 @@ linkedin_username: kyuhyun-cho-32b010102
 
 # Build settings
 markdown:           kramdown
-paginate:           5
+paginate:           30
 paginate_path:      "/posts/page:num/"
 plugins:
   - jekyll-feed
