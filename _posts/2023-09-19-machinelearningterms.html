@@ -1,0 +1,66 @@
+---
+layout: post
+title: "Fundamental ML"
+subtitle: "Explain the basic machine learning"
+date: 2021-09-18 23:45:13 
+background: '/img/posts/03.jpg'
+---
+
+<p>
+    It explains the basic fundamental technologies for ML.
+</p>
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 20px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Mosaic Augmentation
+    </p>
+    <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - How the algorithm might work
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. Take a number of images(i.e 4)
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. Make them resized in the same size
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        3. Integrate the images into () x () grid (i.e 4x4)
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        4. Crop a image patch in ramdon from the center to take a final augmented image
+    </p>
+    <a href="https://hasty.ai/docs/mp-wiki/augmentations/mosaic#:~:text=Mosaic%20augmentation%20teaches%20the%20model,the%20surroundings%20of%20the%20objects." style="font-style:italic; font-weight:bold; color:rosybrown">Reference </a>
+</div>
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 20px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Feature Extraction vs Feature Selection
+    </p>
+    <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - Feature Extraction
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Feature extraction involves extracting valuable information from the initial feature set to generate a new, reduced feature space. Its main objective is to compress data while retaining the most important information
+    </p>
+    <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - Feature Selection
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Instead of creating new features, Feature Selection focuses on choosing a subset of the existing features that contribute most significantly to the problem. This process eliminates irrelevant or redundant features while preserving the important ones.
+    </p>
+    <a href="https://medium.com/@deepyachowdary/feature-selection-vs-feature-extraction-2fd95308a9bd" style="font-style:italic; font-weight:bold; color:rosybrown">Reference </a>
+</div>
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 20px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Transfer Learning
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Transfer Learning is the most important technique that eases the task of a data scientist. Training a model is a hefty and time-consuming task; if a model is trained from scratch, it usually does not give very good results. Even if we train a model similar to a pre-trained model, it will not perform as effectively, and it can take weeks for a model to train. Instead, we can use the pre-trained models and use the already learned weights by training them on a custom dataset to perform a similar task. These models are highly efficient and refined in terms of architecture and performance, and they have made their way to the top by performing better in different contests. These models are trained on very large amounts of data, making them more diverse in knowledge.
+
+So transfer learning basically means transferring knowledge gained by training the model on previous data to help the model learn better and faster to perform a different but similar task.
+
+For example, using a YOLOv5 for object detection, but the object is something other than the object’s previous data used.
+    </p>
+    <a href="https://www.analyticsvidhya.com/blog/2023/02/how-to-train-a-custom-dataset-with-yolov5/" style="font-style:italic; font-weight:bold; color:rosybrown">Reference </a>
+</div>
