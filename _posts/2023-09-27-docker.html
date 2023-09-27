@@ -1,0 +1,79 @@
+---
+layout: post
+title: "Docker"
+subtitle: "Introduce how to implement Docker in python on Windows"
+date: 2023-01-28 23:45:13 -0400
+background: '/img/posts/03.jpg'
+---
+
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        This article introduces a simple step how to have a docker running.
+    </p>
+</div>
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - Prerequisite
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+        1. docker-compose file in yml 
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+        2. requirements.txt 
+    </p>
+</div>
+
+
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - docker-compose.yml
+    </p>
+    <p style="font-size: 20px; font-style:italic;padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        
+    </p>
+
+    <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+        <code style="color: beige; padding-left: 2px; height: auto">
+    version: "3.9"
+    services:
+        service_name:
+        container_name: dock_app
+        restart: always
+        ports:
+            - 5000:5000
+        build:
+            context: .
+        dockerfile: Dockerfile 
+        </code>
+    </pre>
+
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. service name:
+    </p>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. container_name: It is a name appearing in a docker (i.e. dock_app)
+    </p>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        3. port:
+    </p>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        4. build:
+    </p>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        5. docker-file:
+    </p>
+</div>
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - docker-compose.yml
+    </p>
+    <p style="font-size: 20px; font-style:italic;padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        
+    </p>
+</div>
+
+
