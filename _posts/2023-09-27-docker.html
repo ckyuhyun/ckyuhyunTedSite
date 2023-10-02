@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Docker"
+title: "Beginner Guide for Docker"
 subtitle: "Introduce how to implement Docker in python on Windows"
 date: 2023-01-28 23:45:13 -0400
 background: '/img/posts/03.jpg'
@@ -39,7 +39,7 @@ background: '/img/posts/03.jpg'
         <code style="color: beige; padding-left: 2px; height: auto">
     version: "3.9"
     services:
-        service_name:
+        service_name: it must consist of lower case
         container_name: dock_app
         restart: always
         ports:
@@ -69,11 +69,180 @@ background: '/img/posts/03.jpg'
 
 <div style="margin-bottom: 50px;">
     <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
-        - docker-compose.yml
+        - Dockerfile
     </p>
     <p style="font-size: 20px; font-style:italic;padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
         
     </p>
+    <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+        <code style="color: beige; padding-left: 2px; height: auto">    
+    # syntax=docker/dockerfile:1
+
+    FROM python:3.8-slim-buster
+
+    WORKDIR /objectdetection
+    # Install dependencies:
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+    COPY app.py  .
+    #COPY cert.pem /etc/ssl/cert.pem
+    #COPY key.pem /etc/ssl/key.pem
+    # Run the application:
+    ENTRYPOINT FLASK_APP=app.py flask run --host=0.0.0.0
+        </code>
+    </pre>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. Python package
+        <pre  style="background-color: black; height: auto; margin-bottom:10px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">    
+    # syntax=docker/dockerfile:1
+
+    FROM python:3.8-slim-buster
+            </code>
+        </pre>
+        This brings the a python packages in a docker image.
+    </p>
+
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. Configure an environment
+        <pre  style="background-color: black; height: auto; margin-bottom:10px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">    
+    WORKDIR /objectdetection
+    # Install dependencies:
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
+    COPY app.py  .
+    #COPY cert.pem /etc/ssl/cert.pem
+    #COPY key.pem /etc/ssl/key.pem
+            </code>
+        </pre>
+        Here, create a directory, copy data, install packages if needed. It would do the most that are needed for the application running in the docker. 
+    </p>
+    <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        3. Run an application
+        <pre  style="background-color: black; height: auto; margin-bottom:10px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">    
+    # Run the application:
+    ENTRYPOINT FLASK_APP=app.py flask run --host=0.0.0.0
+            </code>
+        </pre>
+        It may change how to run the application a bit. but basically, we can set an entry file, a port and so on here.
+    </p>
 </div>
 
 
+
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - Docker command
+    </p>
+    <p style="font-size: 20px; font-style:italic;padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        
+    </p>
+
+    
+    <div>
+        <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            1. Remove unused containers
+        </p>
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+        $ docker container prune
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            2. Remove unused images
+        </p>
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+        $ docker image prune
+            </code>
+        </pre>
+    </div>
+    
+    <div>
+        <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            3. Remove unused volumes
+        </p>
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+        $ docker volume prune
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            4. Show list of all images
+        </p>
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+        $ docker image list
+            </code>
+        </pre>
+    </div>
+</div>
+
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - How to share a docker container image with others
+    </p>
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. exporting docker image
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+        - docker save $(image name):latest > (saved file name).tar
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+$ docker save objectdetection_objectdetection:latest > objectdetection_objectdetection.tar
+            </code>
+        </pre>
+    </p>
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. importing docker image
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+        - docker save $(image name):latest > (saved file name).tar
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+$ docker load objectdetection_objectdetection.tar
+            </code>
+        </pre>
+    </p>
+</div>
+
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - How to get a file from a docker container to a host
+    </p>
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. Prerequisite
+    </p>
+    <div style="margin-bottom: 20px;">
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+            -  Id for the container :  Container id can be found with this command
+            <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+                <code style="color: beige; padding-left: 2px; height: auto">
+    $ docker container list
+                </code>
+            </pre>
+        </p>
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
+            -  Path of a file in a docker container : Here, I recommend using a docker cli to make sure where the file is
+        </p>
+    </div>
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. How to copy the file to host
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+    $ docker cp $(container id):$(file path in docker container) $(path to be saved in host)
+            </code>
+        </pre>
+    </p>
+</div>
