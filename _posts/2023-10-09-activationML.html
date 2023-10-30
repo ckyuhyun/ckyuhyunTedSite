@@ -1,0 +1,56 @@
+---
+layout: post
+title: "Activation function for ML"
+subtitle: "Beginner Guide for activation function"
+date: 2023-09-28 23:45:13 -0400
+background: '/img/posts/03.jpg'
+---
+<p>
+    Activation function is a main subject at the deep learning. It should be determined computational accurary and effectiveness in model.
+</p>
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 30px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Sigmoid and Tanh
+    </p>
+    <img src="/img/posts/sigmoid_tahn.jpeg" style="width: 70%; height: 70%; margin-bottom:50px;">
+    
+    <div style="margin-bottom: 50px;">
+        <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            - Sigmoid(A.k.a. Logistic function)
+        </p>
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            Sigmoid is transforming the input data to between 0 and 1 as the graph above.
+        </p>
+        
+        <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            - Tanh(A.k.a. Hyperbolic tangent)
+        </p>
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            Tanh is transforming the input data to between -1 and 1 as the graph above.
+        </p>
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            1. Tanh function was perferred over the Sigmoid as Tanh has a bit better predicitve performance and is easy to be used.
+        </p>
+    </div>
+    <p style="font-size: 20px; font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        - Common cons on Sigmoid and Tanh
+    </p>
+    <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        As the above graph is seen. the left and right side has less gradient, so it would cause a bit worse performance on accuracy and effectiveness.
+    </p>
+</div>
+
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 30px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        Relu(Rectified Linear Unit)
+    </p>
+    <img src="/img/posts/relu_graph.jpeg" style="width: 70%; height: 70%; margin-bottom:50px;">
+    
+    <div style="margin-bottom: 50px;">
+        Relu returns 0 if the input is negative, but for any positive input, it returns that value back.
+        <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            Sigmoid is transforming the input data to between 0 and 1 as the graph above.
+        </p>
+</div>
