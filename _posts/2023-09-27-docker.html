@@ -196,10 +196,10 @@ background: '/img/posts/03.jpg'
         1. exporting docker image
     </p>
     <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
-        - docker save $(image name):latest > (saving file name).tar
+        - docker save -o (saving file name).tar $(image name):latest
         <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
             <code style="color: beige; padding-left: 2px; height: auto">
-$ docker save objectdetection_objectdetection:latest > objectdetection_objectdetection.tar
+$ docker save -o objectdetection_objectdetection.tar objectdetection_objectdetection:latest
             </code>
         </pre>
     </p>
@@ -207,10 +207,10 @@ $ docker save objectdetection_objectdetection:latest > objectdetection_objectdet
         2. importing docker image
     </p>
     <p style="font-size: 20px; padding-left: 10px;padding-bottom: 0px;margin-bottom: 0px; margin-top:0px">
-        - docker load < (loading file name).tar
+        - docker load -i (loading file name).tar
         <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
             <code style="color: beige; padding-left: 2px; height: auto">
-$ docker load < objectdetection_objectdetection.tar
+$ docker load -i objectdetection_objectdetection.tar
             </code>
         </pre>
     </p>

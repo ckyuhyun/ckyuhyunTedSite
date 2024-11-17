@@ -1,0 +1,33 @@
+---
+layout: post
+title: "Hugging face"
+subtitle: "Hugging face"
+date: 2024-03-08 23:45:13 -0400
+background: '/img/posts/03.jpg'
+---
+<style>
+    .code-block{
+        padding-left:0 !important;
+    }
+</style>
+
+<div style="margin-bottom: 50px;">
+    <p style="font-size: 20px;font-weight: bold;  padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        1. sequence_ids
+    </p>
+    <p style="font-size: 20px;font-style:italic; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        They represent the index of the input sequence associated to each token. 
+        The sequence id can be None if the token is not related to any input sequence, like for example with special tokens.
+    </p>
+    <pre  style="background-color: black; width:auto; height: auto;">
+        <code style="color: beige; padding-left: 2px; height: auto; width:auto;" >
+            model_path = 'models/distilbert-custom'
+            tokenizer = DistilBertTokenizerFast.from_pretrained(model_path)
+            tokenized.sequence_ids(0)
+        </code>
+    </pre>
+    <div style="background-color:lightblue; width: auto;">
+        Out => [None, 0, 0, None, 1, 1, None]
+    </div>
+    
+</div>

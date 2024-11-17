@@ -2,7 +2,7 @@
 layout: post
 title: "Large Language Model (LLMs)"
 subtitle: ""
-date: 2021-10-02 21:45:13 -0600
+date: 2024-08-02 21:45:13 -0600
 background: '/img/posts/03.jpg'
 
 ---
@@ -16,9 +16,46 @@ background: '/img/posts/03.jpg'
 </p>
 <img src="/img/posts/lstm.jpg" style="width: auto; height: auto;">
 
-<p style="font-size: 20px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
-    2. Transformer
-</p>
+
+<div style="margin-bottom:50px">
+    <p style="font-size: 20px; font-weight: bold; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+        2. Transformer
+    </p>
+    <div style="margin-bottom: 50px;">
+        - Tokenizer of Transformer in Huggingface calls in this way
+        <pre  style="background-color: black; height: auto; margin-bottom:20px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+                tokenizer(question, context, ...)
+            </code>
+        </pre>
+        <p style="font-size: 20px; font-style:italic; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            this input would consist of this structure.     
+        </p>
+        <p style="font-size: 20px; font-style:italic; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            [CLS] question [SEP] context [SEP]
+        </p>
+    </div>
+
+    <div style="margin-bottom: 50px;">
+        - Sequence Ids
+        <pre  style="background-color: black; height: auto; margin-bottom:20px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+                Question tokens: [0, 0, 0, 0]
+                Context tokens: [1, 1, 1, 1, 1, 1, 1]
+            </code>
+        </pre>
+        <p style="font-size: 20px; font-style:italic; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            '0' represents the question tokens, and '1' does the context tokens
+        </p>
+        <p style="font-size: 20px; font-style:italic; padding-left: 10px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            [CLS] question [SEP] context [SEP]
+        </p>
+    </div>
+</div>
+
+
+
+<a href="https://huggingface.co/learn/nlp-course/en/chapter6/3b" style="font-style:italic; font-weight:bold; color:rosybrown">Reference : Huggingface</a>
 
 
 
