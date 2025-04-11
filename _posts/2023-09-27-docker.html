@@ -39,11 +39,11 @@ background: '/img/posts/03.jpg'
         <code style="color: beige; padding-left: 2px; height: auto">
     version: "3.9"
     services:
-        service_name: it must consist of lower case
-        container_name: dock_app
+        ${service_name}: 
+        ${container_name}: 
         restart: always
         ports:
-            - 5000:5000
+            - ${start port number}:${last port number}
         build:
             context: .
         dockerfile: Dockerfile 
@@ -51,13 +51,13 @@ background: '/img/posts/03.jpg'
     </pre>
 
     <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
-        1. service name:
+        1. service name: it must consist of lower case
     </p>
     <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
         2. container_name: It is a name appearing in a docker (i.e. dock_app)
     </p>
     <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
-        3. port:
+        3. port: set a range of port for the docker container
     </p>
     <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
         4. build:
@@ -182,6 +182,18 @@ background: '/img/posts/03.jpg'
         <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
             <code style="color: beige; padding-left: 2px; height: auto">
         $ docker image list
+            </code>
+        </pre>
+    </div>
+
+    <div>
+        <p style="font-size: 20px; padding-left: 50px;padding-bottom: 0px;margin-bottom: 10px; margin-top:0px">
+            4. Delete docker image
+        </p>
+        <pre  style="background-color: black; height: auto; margin-bottom:50px; margin-left: 30px;">
+            <code style="color: beige; padding-left: 2px; height: auto">
+        $ docker image list or $ docker images -a     # show all of docker image list
+        $ docker rmi $(image_id)     # show all of docker image list
             </code>
         </pre>
     </div>
